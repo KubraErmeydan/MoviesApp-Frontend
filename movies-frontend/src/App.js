@@ -16,7 +16,15 @@ const App = () => {
           <Route exact path="/" component={WatchList} />
           <Route exact path="/watched" component={Watched} />
           <Route exact path="/add" component={Add} />
+
+
+
+          
         </Routes>
+
+
+
+        
       </BrowserRouter>
     </GlobalContextProvider>
   );

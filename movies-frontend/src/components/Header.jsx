@@ -4,7 +4,8 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import LoginSignup from "./Auth/LoginSignup";
 
 const Header = () => {
  
@@ -24,7 +25,9 @@ return (
                     <NavLink className ="nav-link" to="/">Home</NavLink>
                     <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>      
                 </Nav>
-                <Button variant="outline-info" className="me-2">Login</Button>
+                
+                <Link to={"/auth"} >
+                <Button variant="outline-info" className="me-2">Login</Button></Link>
                 <Button variant="outline-info">Register</Button>
             </Navbar.Collapse>
         </Container>
