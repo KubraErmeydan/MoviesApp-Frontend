@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Watched from "./components/Watched";
 import WatchList from "./components/WatchList";
 import { GlobalContextProvider } from "./context/GlobalState";
+import LoginSignup from "./components/Auth/LoginSignup";
 
 const App = () => {
   return (
@@ -15,16 +16,10 @@ const App = () => {
         <Routes >
           <Route exact path="/" component={WatchList} />
           <Route exact path="/watched" component={Watched} />
+          <Route exact path="/watched" component={Watched} />
           <Route exact path="/add" component={Add} />
-
-
-
-          
-        </Routes>
-
-
-
-        
+          <Route exact path="/auth" element = {<LoginSignup/>}/>
+        </Routes>        
       </BrowserRouter>
     </GlobalContextProvider>
   );

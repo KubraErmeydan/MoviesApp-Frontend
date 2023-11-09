@@ -26,7 +26,7 @@ return (
                     <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>      
                 </Nav>
                 
-                <Link to={"/auth"} >
+                <Link to="/auth" >
                 <Button variant="outline-info" className="me-2">Login</Button></Link>
                 <Button variant="outline-info">Register</Button>
             </Navbar.Collapse>
