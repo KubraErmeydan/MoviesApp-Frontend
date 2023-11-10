@@ -12,8 +12,8 @@ const Header = () => {
 return (
     <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
-            <Navbar.Brand href="/" style={{"color":'gold'}}>
-                <FontAwesomeIcon icon ={faVideoSlash}/>Gold
+            <Navbar.Brand href="/" style={{"color":'red'}}>
+                <FontAwesomeIcon icon ={faVideoSlash}/>Movies App
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -23,9 +23,10 @@ return (
                         navbarScroll
                     >
                     <NavLink className ="nav-link" to="/">Home</NavLink>
-                    <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>      
+                    <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>
+                    <NavLink className ="nav-link" to="/add">Add</NavLink>      
                 </Nav>
-                {/* <Button variant="outline-info">Register</Button> */}
+                <Button style={{"color":'red'}} variant="person">h</Button>
                 <Link to="/auth" >
                 <Button variant="outline-info" className="me-2">Login</Button></Link>
                 
