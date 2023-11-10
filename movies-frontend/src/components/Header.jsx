@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {Link, NavLink} from "react-router-dom";
-import LoginSignup from "./Auth/LoginSignup";
+
 
 const Header = () => {
  
@@ -23,7 +23,8 @@ return (
                         navbarScroll
                     >
                     <NavLink className ="nav-link" to="/">Home</NavLink>
-                    <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>
+                    <NavLink className ="nav-link" to="/watchlist">Watch List</NavLink>
+                    <NavLink className ="nav-link" to="/watched">Watched</NavLink>
                     <NavLink className ="nav-link" to="/add">Add</NavLink>      
                 </Nav>
                 <Button style={{"color":'red'}} variant="person">h</Button>

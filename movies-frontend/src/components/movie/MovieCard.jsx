@@ -1,6 +1,7 @@
 import React from "react";
 import MovieControls from "./MovieControls";
 
+
 const MovieCard = ({ movie, type }) => {
   return (
     <div className="movie-card">
@@ -19,4 +20,4 @@ const MovieCard = ({ movie, type }) => {
   );
 };
 
-export default MovieCard;
+export default MovieCard
