@@ -28,7 +28,7 @@ return (
                     <NavLink className ="nav-link" to="/add">Add</NavLink>      
                 </Nav>
                 <Button style={{"color":'red'}} variant="person">h</Button>
-                <Link to="/auth" >
+                <Link to="/login" >
                 <Button variant="outline-info" className="me-2">Login</Button></Link>
                 
             </Navbar.Collapse>
