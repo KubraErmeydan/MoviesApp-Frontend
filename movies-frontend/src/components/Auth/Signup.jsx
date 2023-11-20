@@ -1,6 +1,8 @@
-
 import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
+
 
   function SignUp() {
     const [username, setUsername] = useState("")
@@ -9,42 +11,38 @@ import { Link,useNavigate } from 'react-router-dom'
     const navigate = useNavigate();
 
     const handleUsername = (value) => {
-        setUsername(value)
+        setUsername(value);
     }
 
     const handlePassword = (value) => {
-        setPassword(value)
+        setPassword(value);
     }
 
     const handleEmail = (value) => {
-        setEmail(value)
+        setEmail(value);
     }
 
-    const handleButton = (path) => {
-        sendRequest(path)
-        setUsername("")
-        setPassword("")
-        setEmail("")
-        navigate("/login") 
+    const handleButton = () => {
+        sendRequest();
     }
 
 
-    const sendRequest = (path) => {
+    const sendRequest = () => {
         const data = {
             username: username,
             password: password,
             email: email
-        }
-        axios.post(`http://localhost:3000/${path}`, data)
+        };
+        axios.post(`http://localhost:8089/api/v1/auth/register`, data)
             .then((res) => {
                 console.log(res.data)
                 localStorage.setItem("token", res.data.token)
-                navigate.push("/home")
+                navigate("/home")
             })
             .catch((err) => {
-                console.log(err)
-            })
-    }
+                console.error("An error occurred while recording::",err)
+            });
+    };
 
 
 
@@ -63,14 +61,14 @@ import { Link,useNavigate } from 'react-router-dom'
         </div>
         <div className='mb-2'>
             <label>Password</label>
-            <input className='form-control' type='Enter Password' placeholder='Enter password' onChange = {(i) => handlePassword(i.target.value)}/>
+            <input className='form-control' type='password' placeholder='Enter password' onChange = {(i) => handlePassword(i.target.value)}/>
         </div>  
         
         <div className='d-grid mt-2'>
-            <button className='btn btn-primary' onClick={handleButton} >sign Up</button>
+            <button className='btn btn-primary'type="button" onClick={handleButton} >sign Up</button>
         </div>
         <p className='text-end mt-2'>
-          Already Registerd<Link to="/login" className='ms-2'> Sign in</Link>
+          Already Registered<Link to="/login" className='ms-2'> Sign in</Link>
         </p>
           
         </form>
